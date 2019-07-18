@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<config>
+
+  <luceneMatchVersion>7.4.0</luceneMatchVersion>
+  <schemaFactory class="ClassicIndexSchemaFactory"/>
+
+  <query>
+    <enableLazyFieldLoading>true</enableLazyFieldLoading>
+    <!-- This must be high, so that wildcard searches work reasonably. -->
+    <maxBooleanClauses>20000</maxBooleanClauses>
+  </query>
+
+  <requestHandler name="/select" class="solr.SearchHandler">
+    <lst name="defaults">
+      <str name="echoParams">all</str>
+      <str name="defType">edismax</str>
+      <str name="df">text</str>
+      <str name="rows">300</str>
+      <str name="hl.simple.pre"><![CDATA[<span class="highlight">]]></str>
+      <str name="hl.simple.post"><![CDATA[</span>]]></str>
+    </lst>
+  </requestHandler>
+
+
+  <!-- For the Analysis functionality in the admin interface. -->
+  <requestHandler name="/analysis/field" startup="lazy" class="solr.FieldAnalysisRequestHandler" />
+
+  <admin>
+    <defaultQuery>solr</defaultQuery>
+  </admin>
+
+</config>
