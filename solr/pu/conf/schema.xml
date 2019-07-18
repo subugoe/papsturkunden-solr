@@ -36,8 +36,7 @@
   
   <field name="page" type="int" />
   <field name="page_pdf" type="int" />
-  <field name="idno" type="text_de" />
-  
+  <field name="orig_text" type="text_de" multiValued="true" />
 
   <!-- transaction log -->
   <field name="_version_" type="long" indexed="true" stored="true" />
