@@ -33,6 +33,7 @@
   </fieldType>
 
   <field name="idno" type="string" required="true" />
+  <field name="bd" type="string" />
   
   <field name="page" type="int" />
   <field name="page_pdf" type="int" />
