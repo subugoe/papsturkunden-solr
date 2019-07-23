@@ -50,6 +50,7 @@
 
   <field name="page" type="int" />
   <field name="page_pdf" type="int" />
+  <field name="num" type="int" />
   <field name="orig_text" type="text_de" multiValued="true" />
   <field name="part1" type="text_de" />
   <field name="part2" type="text_de" multiValued="true" />
